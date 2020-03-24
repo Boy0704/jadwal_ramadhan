@@ -40,9 +40,10 @@
               <li><a href="Kecamatan"><i class="fa fa-angle-double-right"></i> Kecamatan</a></li>
               <li><a href="kelurahan"><i class="fa fa-angle-double-right"></i> Kelurahan</a></li>
               <li><a href="Masjid"><i class="fa fa-angle-double-right"></i> Masjid</a></li>
+              <li><a href="kegiatan"><i class="fa fa-angle-double-right"></i> Kegiatan</a></li>
           </ul>
         </li>
-        <li><a href="app/set_jadwal"><i class="fa fa-calendar"></i> <span>SET Jadwal</span></a></li>
+        <li><a href="jadwal"><i class="fa fa-calendar"></i> <span>SET Jadwal</span></a></li>
         
         <li><a href="a_user"><i class="fa fa-users"></i> <span>Manajemen User</span></a></li>
 

@@ -11,7 +11,7 @@
             <div class="col-md-1 text-right">
             </div>
             <div class="col-md-3 text-right">
-                <form action="<?php echo site_url('jadwal/index'); ?>" class="form-inline" method="get">
+                <!-- <form action="<?php echo site_url('jadwal/index'); ?>" class="form-inline" method="get">
                     <div class="input-group">
                         <input type="text" class="form-control" name="q" value="<?php echo $q; ?>">
                         <span class="input-group-btn">
@@ -26,19 +26,26 @@
                           <button class="btn btn-primary" type="submit">Search</button>
                         </span>
                     </div>
-                </form>
+                </form> -->
             </div>
         </div>
-        <table class="table table-bordered" style="margin-bottom: 10px">
+        <div class="table-responsive">
+
+        <table class="table table-bordered" style="margin-bottom: 10px" id="example1">
+            <thead>
             <tr>
                 <th>No</th>
 		<th>Kegiatan</th>
 		<th>Mubaligh</th>
 		<th>Masjid</th>
-		<th>Malam Ke</th>
-		<!-- <th>Date</th> -->
+		<!-- <th>Malam Ke</th> -->
+        <th>Tanggal</th>
+		<th>Kehadiran</th>
 		<th>Action</th>
-            </tr><?php
+            </tr>
+            </thead>
+            <tbody>
+            <?php
             foreach ($jadwal_data as $jadwal)
             {
                 ?>
@@ -47,8 +54,26 @@
 			<td><?php echo $jadwal->kegiatan ?></td>
 			<td><?php echo get_data('mubaligh','id_mubaligh',$jadwal->id_mubaligh,'nama') ?></td>
 			<td><?php echo get_data('masjid','id_masjid',$jadwal->id_masjid,'nama_masjid') ?></td>
-			<td><?php echo $jadwal->malam_ke ?></td>
-			<!-- <td><?php echo $jadwal->date ?></td> -->
+			<!-- <td><?php echo $jadwal->malam_ke ?></td> -->
+            <td><?php echo $jadwal->date ?></td>
+			<td>
+                <?php 
+                if ($jadwal->hadir == 'not set') {
+                    ?>
+                    <span class="label label-warning"><?php echo $jadwal->hadir ?></span>
+                    <?php
+                } elseif ($jadwal->hadir == 'ya') {
+                    ?>
+                    <span class="label label-success"><?php echo $jadwal->hadir ?></span>
+                    <?php
+                } else {
+                    ?>
+                    <span class="label label-danger"><?php echo $jadwal->hadir ?></span>
+                    <?php
+                }
+
+                 ?>         
+            </td>
 			<td style="text-align:center" width="100px">
 				<?php 
 				echo anchor(site_url('jadwal/update/'.$jadwal->id_jadwal),'<span class="label label-info">Ubah</span>'); 
@@ -60,13 +85,15 @@
                 <?php
             }
             ?>
+            </tbody>
         </table>
-        <div class="row">
+    </div>
+        <!-- <div class="row">
             <div class="col-md-6">
                 <a href="#" class="btn btn-primary">Total Record : <?php echo $total_rows ?></a>
 	    </div>
             <div class="col-md-6 text-right">
                 <?php echo $pagination ?>
             </div>
-        </div>
+        </div> -->
     

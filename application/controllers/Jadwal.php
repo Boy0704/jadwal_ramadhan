@@ -98,7 +98,7 @@ class Jadwal extends CI_Controller
                 'malam_ke'=>$this->input->get_post('malam_ke'),
             ));
             if ($cek->num_rows() > 0) {
-                $this->session->set_flashdata('message', alert_biasa($mubaligh.' Sudah ada jadwal di malam '.$this->input->post('malam_ke').', silahkan cek lagi data anda !','warning'));
+                $this->session->set_flashdata('message', alert_biasa($mubaligh.' Sudah ada jadwal di tanggal '.$this->input->post('date').', silahkan cek lagi data anda !','warning'));
                 redirect('jadwal','refresh');
             } else {
 
@@ -158,7 +158,7 @@ class Jadwal extends CI_Controller
                 'malam_ke'=>$this->input->get_post('malam_ke'),
             ));
             if ($cek->num_rows() > 0) {
-                $this->session->set_flashdata('message', alert_biasa($mubaligh.' Sudah ada jadwal di malam '.$this->input->post('malam_ke').', silahkan cek lagi data anda !','warning'));
+                $this->session->set_flashdata('message', alert_biasa($mubaligh.' Sudah ada jadwal di tanggal '.$this->input->post('date').', silahkan cek lagi data anda !','warning'));
                 redirect('jadwal','refresh');
             } else {
 
@@ -196,8 +196,8 @@ class Jadwal extends CI_Controller
 	$this->form_validation->set_rules('kegiatan', 'kegiatan', 'trim|required');
 	$this->form_validation->set_rules('id_mubaligh', 'id mubaligh', 'trim|required');
 	$this->form_validation->set_rules('id_masjid', 'id masjid', 'trim|required');
-	$this->form_validation->set_rules('malam_ke', 'malam ke', 'trim|required');
-	// $this->form_validation->set_rules('date', 'date', 'trim|required');
+	// $this->form_validation->set_rules('malam_ke', 'malam ke', 'trim|required');
+	$this->form_validation->set_rules('date', 'date', 'trim|required');
 
 	$this->form_validation->set_rules('id_jadwal', 'id_jadwal', 'trim');
 	$this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');

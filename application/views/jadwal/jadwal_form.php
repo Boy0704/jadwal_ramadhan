@@ -33,14 +33,14 @@
                 
             </select>
         </div>
-	    <div class="form-group">
+	    <!-- <div class="form-group">
             <label for="int">Malam Ke <?php echo form_error('malam_ke') ?></label>
             <input type="text" class="form-control" name="malam_ke" id="malam_ke" placeholder="1" value="<?php echo $malam_ke; ?>" />
-        </div>
-	    <!-- <div class="form-group">
-            <label for="date">Date <?php echo form_error('date') ?></label>
-            <input type="text" class="form-control" name="date" id="date" placeholder="Date" value="<?php echo $date; ?>" />
         </div> -->
+	    <div class="form-group">
+            <label for="date">Tanggal <?php echo form_error('date') ?></label>
+            <input type="date" class="form-control" name="date" id="date" placeholder="Date" value="<?php echo $date; ?>" />
+        </div>
 	    <input type="hidden" name="id_jadwal" value="<?php echo $id_jadwal; ?>" /> 
 	    <button type="submit" class="btn btn-primary"><?php echo $button ?></button> 
 	    <a href="<?php echo site_url('jadwal') ?>" class="btn btn-default">Cancel</a>

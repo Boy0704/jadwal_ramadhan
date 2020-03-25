@@ -36,7 +36,8 @@
 		<th>Username</th>
 		<th>Password</th>
 		<th>Level</th>
-		<th>Foto</th>
+		<th>Masjid</th>
+        <th>Foto</th>
 		<th>Action</th>
             </tr><?php
             foreach ($a_user_data as $a_user)
@@ -47,7 +48,15 @@
 			<td><?php echo $a_user->nama_lengkap ?></td>
 			<td><?php echo $a_user->username ?></td>
 			<td><?php echo $a_user->password ?></td>
-			<td><?php echo $a_user->level ?></td>
+            <td><?php echo $a_user->level ?></td>
+			<td><?php 
+            if ($a_user->masjid == '0') {
+                echo "Semua Masjid";
+            } else {
+                echo get_data('masjid','id_masjid',$a_user->masjid,'nama_masjid');
+            }
+
+             ?></td>
 			<td><img src="image/user/<?php echo $a_user->foto ?>" style="width: 100px;"></td>
 			<td style="text-align:center" width="200px">
 				<?php 

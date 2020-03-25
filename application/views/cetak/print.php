@@ -5,7 +5,7 @@
 	<title>Cetak</title>
 	<link rel="stylesheet" href="assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
 </head>
-<body>
+<body onload="print()">
 	<center>
 		<h2>CETAK JADWAL</h2>
 	</center>

@@ -94,8 +94,8 @@ class Jadwal extends CI_Controller
             $mubaligh = get_data('mubaligh','id_mubaligh',$this->input->post('id_mubaligh'),'nama');
 
             $cek = $this->db->get_where('jadwal', array(
-                'id_mubaligh'=>$this->input->get_post('id_mubaligh'),
-                'malam_ke'=>$this->input->get_post('malam_ke'),
+                'id_mubaligh'=>$this->input->post('id_mubaligh'),
+                'date'=>$this->input->post('date'),
             ));
             if ($cek->num_rows() > 0) {
                 $this->session->set_flashdata('message', alert_biasa($mubaligh.' Sudah ada jadwal di tanggal '.$this->input->post('date').', silahkan cek lagi data anda !','warning'));
@@ -154,8 +154,8 @@ class Jadwal extends CI_Controller
             $mubaligh = get_data('mubaligh','id_mubaligh',$this->input->post('id_mubaligh'),'nama');
 
             $cek = $this->db->get_where('jadwal', array(
-                'id_mubaligh'=>$this->input->get_post('id_mubaligh'),
-                'malam_ke'=>$this->input->get_post('malam_ke'),
+                'id_mubaligh'=>$this->input->post('id_mubaligh'),
+                'date'=>$this->input->post('date'),
             ));
             if ($cek->num_rows() > 0) {
                 $this->session->set_flashdata('message', alert_biasa($mubaligh.' Sudah ada jadwal di tanggal '.$this->input->post('date').', silahkan cek lagi data anda !','warning'));

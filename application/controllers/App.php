@@ -17,6 +17,39 @@ class App extends CI_Controller {
 		$this->load->view('v_index', $data);
     }
 
+    public function search_input()
+    {
+        if ($_POST) {
+            $masjid = $this->input->post('masjid');
+            redirect('jadwal/index/'.$masjid,'refresh');
+        } else {
+            $data = array(
+                'konten' => 'jadwal/search_input',
+                'judul_page' => 'search input',
+            );
+            $this->load->view('v_index', $data);
+        }
+    }
+
+    public function jadwal_mubaligh($id_user)
+    {
+        if ($this->session->userdata('level') == '') {
+            redirect('app/login');
+        }
+        $data = array(
+            'konten' => 'jadwal/jadwal_mubaligh',
+            'judul_page' => 'Jadwal mubaligh',
+            'id_user' => $id_user,
+        );
+        $this->load->view('v_index', $data);
+    }
+
+    public function get_mubaligh($id_mubaligh)
+    {
+        $nama = get_data('mubaligh','id_mubaligh',$id_mubaligh,'nama');
+        echo $nama;
+    }
+
     public function admin()
 	{
         // if ($this->session->userdata('username') == '') {

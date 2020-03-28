@@ -77,7 +77,8 @@ class A_user extends CI_Controller
 	    'password' => set_value('password'),
 	    'level' => set_value('level'),
         'foto' => set_value('foto'),
-	    'masjid' => set_value('masjid'),
+        'masjid' => set_value('masjid'),
+	    'id_mubaligh' => set_value('id_mubaligh'),
 	);
         $this->load->view('v_index', $data);
     }
@@ -95,7 +96,8 @@ class A_user extends CI_Controller
 		'username' => $this->input->post('username',TRUE),
 		'password' => md5($this->input->post('password',TRUE)),
         'level' => $this->input->post('level',TRUE),
-		'masjid' => $this->input->post('masjid',TRUE),
+        'masjid' => $this->input->post('masjid',TRUE),
+		'id_mubaligh' => $this->input->post('id_mubaligh',TRUE),
 		'foto' => $img,
 	    );
 
@@ -120,7 +122,8 @@ class A_user extends CI_Controller
 		'username' => set_value('username', $row->username),
 		'password' => set_value('password', $row->password),
         'level' => set_value('level', $row->level),
-		'masjid' => set_value('masjid', $row->masjid),
+        'masjid' => set_value('masjid', $row->masjid),
+		'id_mubaligh' => set_value('id_mubaligh', $row->id_mubaligh),
 		'foto' => set_value('foto', $row->foto),
 	    );
             $this->load->view('v_index', $data);
@@ -141,7 +144,9 @@ class A_user extends CI_Controller
 		'nama_lengkap' => $this->input->post('nama_lengkap',TRUE),
 		'username' => $this->input->post('username',TRUE),
 		'password' => md5($this->input->post('password',TRUE)),
-		'level' => $this->input->post('level',TRUE),
+        'level' => $this->input->post('level',TRUE),
+        'masjid' => $this->input->post('masjid',TRUE),
+		'id_mubaligh' => $this->input->post('id_mubaligh',TRUE),
 		// 'foto' => $this->input->post('foto',TRUE),
 	    );
 

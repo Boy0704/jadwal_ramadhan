@@ -26,6 +26,7 @@ class Login extends CI_Controller {
 					$sess_data['foto'] = $row->foto;
 					$sess_data['level'] = $row->level;
 					$sess_data['masjid'] = $row->masjid;
+					$sess_data['id_mubaligh'] = $row->id_mubaligh;
 					$this->session->set_userdata($sess_data);
 				}
 
@@ -40,6 +41,8 @@ class Login extends CI_Controller {
 					redirect('app','refresh');
 				} elseif ($this->session->userdata('level') == '2') {
 					redirect('app/jadwal_masjid/'.$this->session->userdata('masjid'),'refresh');
+				} elseif ($this->session->userdata('level') == '3') {
+					redirect('app/jadwal_mubaligh/'.$this->session->userdata('id_mubaligh'),'refresh');
 				}
 
 				// redirect('app/index');

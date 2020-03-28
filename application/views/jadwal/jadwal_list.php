@@ -1,7 +1,7 @@
 
         <div class="row" style="margin-bottom: 10px">
             <div class="col-md-4">
-                <?php echo anchor(site_url('jadwal/create'),'Create', 'class="btn btn-primary"'); ?>
+                <?php echo anchor(site_url('jadwal/create/'.$this->uri->segment(3)),'Create', 'class="btn btn-primary"'); ?>
             </div>
             <div class="col-md-4 text-center">
                 <div style="margin-top: 8px" id="message">
@@ -46,7 +46,9 @@
             </thead>
             <tbody>
             <?php
-            foreach ($jadwal_data as $jadwal)
+            $this->db->where('id_masjid', $this->uri->segment(3));
+            $jadwal_data = $this->db->get('jadwal');
+            foreach ($jadwal_data->result() as $jadwal)
             {
                 ?>
                 <tr>

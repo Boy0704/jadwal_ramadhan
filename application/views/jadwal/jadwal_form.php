@@ -24,14 +24,20 @@
         </div>
 	    <div class="form-group">
             <label for="int">Masjid <?php echo form_error('id_masjid') ?></label>
+            <?php 
+            if ($this->uri->segment(2) == 'create') {
+                $id_masjid = $this->uri->segment(3);
+            }
+             ?>
             <!-- <input type="text" class="form-control" name="id_masjid" id="id_masjid" placeholder="Id Masjid" value="<?php echo $id_masjid; ?>" /> -->
             <select name="id_masjid" class="form-control select2">
-                <option value="<?php echo $id_masjid ?>"><?php echo $id_masjid ?></option>
+                <option value="<?php echo $id_masjid ?>"><?php echo get_data('masjid','id_masjid',$id_masjid,'nama_masjid') ?></option>
                 <?php foreach ($this->db->get('masjid')->result() as $rw): ?>
                     <option value="<?php echo $rw->id_masjid ?>"><?php echo $rw->nama_masjid ?></option>
                 <?php endforeach ?>
                 
             </select>
+            
         </div>
 	    <!-- <div class="form-group">
             <label for="int">Malam Ke <?php echo form_error('malam_ke') ?></label>
@@ -43,6 +49,6 @@
         </div>
 	    <input type="hidden" name="id_jadwal" value="<?php echo $id_jadwal; ?>" /> 
 	    <button type="submit" class="btn btn-primary"><?php echo $button ?></button> 
-	    <a href="<?php echo site_url('jadwal') ?>" class="btn btn-default">Cancel</a>
+	    <a href="<?php echo site_url('jadwal/index/'.$id_masjid) ?>" class="btn btn-default">Cancel</a>
 	</form>
    

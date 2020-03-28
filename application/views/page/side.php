@@ -46,7 +46,7 @@
                 <li><a href="kegiatan"><i class="fa fa-angle-double-right"></i> Kegiatan</a></li>
             </ul>
           </li>
-          <li><a href="jadwal"><i class="fa fa-calendar"></i> <span>SET Jadwal</span></a></li>
+          <li><a href="app/search_input"><i class="fa fa-calendar"></i> <span>SET Jadwal</span></a></li>
           <li><a href="app/cetak"><i class="fa fa-print"></i> <span>Cetak</span></a></li>
           
           <li><a href="a_user"><i class="fa fa-users"></i> <span>Manajemen User</span></a></li>
@@ -55,8 +55,10 @@
           ?>
           <li><a href="app/jadwal_masjid/<?php echo $this->session->userdata('masjid'); ?>"><i class="fa fa-calendar"></i> <span>Jadwal Masjid</span></a></li>
           <?php
-        }
+        } elseif ($this->session->userdata('level') == '3'){
          ?>
+         <li><a href="app/jadwal_mubaligh/<?php echo $this->session->userdata('id_mubaligh'); ?>"><i class="fa fa-calendar"></i> <span>Jadwal Mubaligh</span></a></li>
+        <?php } ?>
 
         <li class="header">LABELS</li>
         <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Faqs</span></a></li>

@@ -6,8 +6,27 @@
 	<link rel="stylesheet" href="assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
 </head>
 <body onload="print()">
+
+
+	<table style="font-weight: arial;">
+		<tr>
+			<td>
+				<img src="image/logo.jpg" style="width: 70px; height: 70px;">
+			</td>
+			<td>
+				&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+			</td>
+			<td><center>
+				<h2>KEMENTERIAN AGAMA <br>
+           KANTOR KOTA TANJUNGPINANG</h2>
+			</center></td>
+		</tr>
+	</table>
+	<hr>
 	<center>
-		<h2>CETAK JADWAL</h2>
+		<h2>Jadwal Ramadhan</h2>
 	</center>
 	<hr>
 

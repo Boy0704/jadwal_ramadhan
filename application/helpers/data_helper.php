@@ -1,5 +1,20 @@
 <?php 
 
+function cek_tanggal($malam)
+{
+	$CI =& get_instance();
+	$awal_ramadhan = get_data('setting_jadwal','id',1,'awal_ramadhan');
+	if ($malam == 1) {
+		return $awal_ramadhan;
+	} elseif ($malam > 1) {
+		$tgl1 = $awal_ramadhan;// pendefinisian tanggal awal
+		$mlm = $malam - 1;
+		$tgl2 = date('Y-m-d', strtotime('+'.$mlm.' days', strtotime($tgl1))); //operasi penjumlahan tanggal sebanyak 6 hari
+		return $tgl2;
+	}
+
+}
+
 function stok_display($id_subkategori)
 {
 	$CI =& get_instance();

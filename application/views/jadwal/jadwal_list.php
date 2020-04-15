@@ -38,7 +38,7 @@
 		<th>Kegiatan</th>
 		<th>Mubaligh</th>
 		<th>Masjid</th>
-		<!-- <th>Malam Ke</th> -->
+		<th>Malam Ke</th>
         <th>Tanggal</th>
 		<th>Kehadiran</th>
 		<th>Action</th>
@@ -56,7 +56,7 @@
 			<td><?php echo $jadwal->kegiatan ?></td>
 			<td><?php echo get_data('mubaligh','id_mubaligh',$jadwal->id_mubaligh,'nama') ?></td>
 			<td><?php echo get_data('masjid','id_masjid',$jadwal->id_masjid,'nama_masjid') ?></td>
-			<!-- <td><?php echo $jadwal->malam_ke ?></td> -->
+			<td><?php echo $jadwal->malam_ke ?></td>
             <td><?php echo $jadwal->date ?></td>
 			<td>
                 <?php 
